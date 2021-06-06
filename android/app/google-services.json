@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "919629058162",
+    "project_id": "yotes-bdae7",
+    "storage_bucket": "yotes-bdae7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919629058162:android:4b09189e1842b7f6feb2eb",
+        "android_client_info": {
+          "package_name": "com.devshakib.yotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919629058162-2ua2qg4j3vfrf6875cjctijn8a6g5n12.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbw1P-sOxFhvj9k_jCW85s1nEgHHJum_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919629058162-2ua2qg4j3vfrf6875cjctijn8a6g5n12.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
