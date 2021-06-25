@@ -12,6 +12,7 @@ class NoteView extends StatelessWidget {
   }) : super(key: key);
 
   final _noteController = Get.find<NoteController>();
+  final _homeController = Get.find<HomeController>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,8 @@ class NoteView extends StatelessWidget {
             : Text(_noteController.notes[index].title)),
         actions: [
           IconButton(
-            onPressed: () {
-              Get.bottomSheet(
+            onPressed: () async {
+              await Get.bottomSheet(
                 AppBottomSheet(
                   noteController: _noteController,
                   homeController: Get.find<HomeController>(),
@@ -32,6 +33,7 @@ class NoteView extends StatelessWidget {
                 ),
                 backgroundColor: Get.theme.canvasColor,
               );
+              _homeController.clearFields();
             },
             icon: Icon(Icons.edit),
             tooltip: "Edit",

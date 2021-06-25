@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yotes/controllers/auth_controller.dart';
 import 'package:yotes/controllers/home_controller.dart';
+import 'package:yotes/utils/constants.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({
@@ -24,6 +25,14 @@ class AppDrawer extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      auth.currentUser!.photoURL == null
+                          ? Container()
+                          : Container(
+                              child: Image.network(auth.currentUser!.photoURL!),
+                            ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Text(
                         '${_controller.userName}',
                       ),
@@ -35,6 +44,17 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           Expanded(child: Container()),
+          auth.currentUser!.emailVerified
+              ? Container()
+              : Card(
+                  child: ListTile(
+                    title: Text("Verify Email"),
+                    leading: Icon(Icons.verified),
+                    onTap: () {
+                      Get.find<AuthController>().verifyEmail();
+                    },
+                  ),
+                ),
           Card(
             child: ListTile(
               title: Text("Log Out"),
@@ -43,7 +63,7 @@ class AppDrawer extends StatelessWidget {
                 Get.find<AuthController>().signOut();
               },
             ),
-          )
+          ),
         ],
       ),
     );

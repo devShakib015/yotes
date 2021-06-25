@@ -80,11 +80,24 @@ class LoginView extends StatelessWidget {
                     height: 10,
                   ),
                   TextButton(
-                      onPressed: () {
-                        Get.to(() => SignupView());
-                        _controller.clearFields();
-                      },
-                      child: Text("Sign Up"))
+                    onPressed: () {
+                      Get.to(() => SignupView());
+                      _controller.clearFields();
+                    },
+                    child: Text("Sign Up"),
+                  ),
+                  Divider(
+                    height: 40,
+                    thickness: 2,
+                  ),
+                  ElevatedButton.icon(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    ),
+                    onPressed: _controller.facebookLoginStatus,
+                    icon: Icon(Icons.facebook),
+                    label: Text("Continue With Facebook"),
+                  ),
                 ],
               ),
             ),

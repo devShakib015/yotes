@@ -2,6 +2,7 @@ class AppUser {
   String name;
   String email;
   String id;
+
   AppUser({
     required this.name,
     required this.email,

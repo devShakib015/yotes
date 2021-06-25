@@ -10,7 +10,7 @@ class LoginController extends GetxController {
   String email = '';
   String password = '';
 
-  AuthController _authController = Get.find();
+  AuthController _authController = Get.find<AuthController>();
 
   @override
   void onInit() {
@@ -39,6 +39,11 @@ class LoginController extends GetxController {
       await _authController.login(email, password);
       this.clearFields();
     }
+  }
+
+  void facebookLoginStatus() async {
+    await _authController.loginWithFacebook();
+    this.clearFields();
   }
 
   void clearFields() {

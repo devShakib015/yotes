@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yotes/controllers/bindings/auth_bindings.dart';
+import 'package:yotes/utils/constants.dart';
 import 'package:yotes/utils/root.dart';
 
 void main() async {
